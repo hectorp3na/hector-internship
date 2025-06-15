@@ -46,6 +46,8 @@ const NewItems = () => {
     getNewItems();
   }, []);
 
+
+
   function Countdown({ expiryDate }) {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -103,7 +105,7 @@ return (
         <>
   <OwlCarousel className="owl-theme" {...options}>
     {newItems.map((item, index) => (
-      <div className="item" key={index}>
+      <div className="item" key={item.nftId}>
         <div className="nft__item">
           <div className="author_list_pp">
             <Link
