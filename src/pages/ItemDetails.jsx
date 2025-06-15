@@ -3,6 +3,8 @@ import EthImage from "../images/ethereum.svg";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Skeleton from "../components/UI/Skeleton";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ItemDetails = () => {
   const { nftId } = useParams();
@@ -35,7 +37,7 @@ const ItemDetails = () => {
         <section aria-label="section" className="mt90 sm-mt-0">
           <div className="container">
             <div className="row">
-              <div className="col-md-6 text-center">
+              <div className="col-md-6 text-center" data-aos="fade-right">
                 {loading ? (
                   <Skeleton width="100%" height="400px" borderRadius="12px" />
                 ) : (
@@ -46,7 +48,7 @@ const ItemDetails = () => {
                   />
                 )}
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6" data-aos="fade-left">
                 <div className="item_info">
                   {loading ? (
                     <Skeleton width="60%" height="30px" />
@@ -84,7 +86,7 @@ const ItemDetails = () => {
                     <p>{itemDetails.description}</p>
                   )}
                   <div className="d-flex flex-row">
-                    <div className="mr40">
+                    <div className="mr40" data-aos="fade-up">
                       <h6>Owner</h6>
                       <div className="item_author">
                         <div className="author_list_pp">
@@ -121,7 +123,7 @@ const ItemDetails = () => {
                     </div>
 
                   </div>
-                  <div className="de_tab tab_simple">
+                  <div className="de_tab tab_simple" data-aos="fade-up">
                     <div className="de_tab_content">
                       <h6>Creator</h6>
                       <div className="item_author">

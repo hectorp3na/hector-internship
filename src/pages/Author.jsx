@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import AuthorBanner from "../images/author_banner.jpg";
 import AuthorItems from "../components/author/AuthorItems";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const skeletonStyle = {
   background: "linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%)",
@@ -54,7 +56,7 @@ const Author = () => {
         <section aria-label="section">
           <div className="container">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-12" data-aos="fade-up">
                 {loading ? (
                   <div className="d_profile de-flex">
                     <div className="de-flex-col">
@@ -155,7 +157,7 @@ const Author = () => {
                 )}
               </div>
 
-              <div className="col-md-12">
+              <div className="col-md-12" data-aos="fade-up" data-aos-delay="200">
                 <div className="de_tab tab_simple">
                   <AuthorItems authorId={id} />
                 </div>
