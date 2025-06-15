@@ -5,9 +5,15 @@ import Landing from "../components/home/Landing";
 import LandingIntro from "../components/home/LandingIntro";
 import NewItems from "../components/home/NewItems";
 import TopSellers from "../components/home/TopSellers";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
     window.scrollTo(0, 0);
   }, []);
 

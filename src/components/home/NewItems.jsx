@@ -87,7 +87,7 @@ return (
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up">
           <h2>New Items</h2>
           <div className="small-border bg-color-2"></div>
         </div>
@@ -96,7 +96,7 @@ return (
       {loading ? (
         <OwlCarousel className="owl-theme" {...options}>
           {new Array(4).fill(0).map((_, index) => (
-            <div className="item" key={index}>
+            <div className="item" key={index} >
               <Skeleton width="100%" height="300px" />
             </div>
           ))}
@@ -105,7 +105,8 @@ return (
         <>
   <OwlCarousel className="owl-theme" {...options}>
     {newItems.map((item, index) => (
-      <div className="item" key={item.nftId}>
+      <div className="item" key={item.nftId} data-aos="zoom-in"
+      data-aos-delay={index * 100}>
         <div className="nft__item">
           <div className="author_list_pp">
             <Link

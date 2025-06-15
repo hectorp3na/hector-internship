@@ -31,7 +31,7 @@ const [topSellers, setTopSellers] = useState([]);
     <section id="section-popular" className="pb-5">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+          <div className="col-lg-12" data-aos="fade-up">
             <div className="text-center">
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
@@ -41,7 +41,7 @@ const [topSellers, setTopSellers] = useState([]);
             <ol className="author_list">
             {loading
                 ? skeletonArray.map((_, index) => (
-                  <li key={index}>
+                  <li key={index} data-aos="fade-up" data-aos-delay={index * 50}>
                     <div className="author_list_pp">
                       <Skeleton width="50px" height="50px" borderRadius="50%" />
                     </div>
@@ -53,7 +53,7 @@ const [topSellers, setTopSellers] = useState([]);
                 ))
                 : 
               topSellers.map((seller, index) => (
-                <li key={index}>
+                <li key={index} data-aos="fade-up" data-aos-delay={index * 50}>
                   <div className="author_list_pp">
                     <Link to={`/author/${seller.authorId}`}>
                       <img

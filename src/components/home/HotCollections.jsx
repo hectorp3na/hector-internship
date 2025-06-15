@@ -48,7 +48,7 @@ const HotCollections = () => {
     <section id="section-collections" className="no-bottom">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12">
+          <div className="col-lg-12" data-aos="fade-up">
             <div className="text-center">
               <h2>Hot Collections</h2>
               <div className="small-border bg-color-2"></div>
@@ -58,7 +58,7 @@ const HotCollections = () => {
           {loading ? (
             <OwlCarousel className="owl-theme" {...options}>
               {new Array(8).fill(0).map((_, index) => (
-                <div className="item" key={index}>
+                <div className="item" key={index} data-aos="fade-up" data-aos-delay={index * 50}>
                   <div className="nft_coll">
                     <div className="nft_wrap">
                       <Skeleton width="100%" height="200px" />
@@ -80,7 +80,7 @@ const HotCollections = () => {
             <>
               <OwlCarousel className="owl-theme" {...options}>
                 {collections.map((collection, index) => (
-                  <div className="item" key={index}>
+                  <div className="item" key={index} data-aos="fade-up" data-aos-delay={index * 50}>
                     <div className="nft_coll">
                       <div className="nft_wrap">
                         <Link to={`/item-details/${collection.nftId}`}>
